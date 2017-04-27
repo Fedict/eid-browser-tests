@@ -20,5 +20,9 @@ _WinWaitActivate("Nightly Setup","")
 Send("{SPACE}")
 _WinWaitActivate("Firefox Nightly First Run Page - Nightly","")
 Send("{ALTDOWN}{F4}{ALTUP}")
+If (WinExists("Confirm close","")) Then
+   WinActivate("Confirm close","")
+   Send("{SPACE}")
+EndIf
 _WinWaitActivate("Downloads weergeven - Internet Explorer","")
 Send("{ALTDOWN}{F4}{ALTUP}")
