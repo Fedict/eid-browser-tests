@@ -27,7 +27,7 @@ If $CmdLine[0] <> 1 Then
 EndIf
 Run('"C:\Program Files\Internet Explorer\iexplore.exe" "https://test.eid.belgium.be/"')
 _WinWaitActivate("Windows-beveiliging","")
-Send("{TAB}{ENTER}")
+Send("{ALTDOWN}o{ALTUP}")
 _WinWaitActivate("Windows-beveiliging","")
 Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("eID Authenticatie Test","",120)

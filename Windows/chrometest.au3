@@ -26,7 +26,7 @@ If $CmdLine[0] <> 1 Then
 	Exit(1)
 EndIf
 
-Run('C:\Users\browsertest\AppData\Local\Google\Chrome SxS\Application\chrome.exe')
+Run('"' & EnvGet("LOCALAPPDATA") & '\Google\Chrome SxS\Application\chrome.exe"')
 _WinWaitActivate("Nieuw tabblad - Google Chrome","")
 Send("https:{SHIFTDOWN}::{SHIFTUP}test{SHIFTDOWN};{SHIFTUP}eid{SHIFTDOWN};{SHIFTUP}belgium{SHIFTDOWN};{SHIFTUP}be{SHIFTDOWN}:{SHIFTUP}{ENTER}")
 Sleep(10000)
