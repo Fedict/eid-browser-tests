@@ -23,16 +23,17 @@ _AU3RecordSetup()
 
 
 Run('C:\Program Files\Nightly\firefox.exe')
+WinWait("Nightly Start Page")
 If (WinExists("Default Browser","")) Then
   WinActivate("Default Browser","")
-  Send("{TAB}{SPACE}")
+  Send("{ESC}")
 EndIf
-_WinWaitActivate("Nightly Start Page - Nightly","")
+_WinWaitActivate("Nightly Start Page","")
 Send("{CTRLDOWN}l{CTRLUP}https:{SHIFTDOWN}::{SHIFTUP}addons{SHIFTDOWN};{SHIFTUP}mozilla{SHIFTDOWN};{SHIFTUP}org{SHIFTDOWN}:{SHIFTUP}firefox{SHIFTDOWN}:{SHIFTUP}downloads{SHIFTDOWN}:{SHIFTUP}latest{SHIFTDOWN}:{SHIFTUP}belgium-eid{SHIFTDOWN}:{SHIFTUP}platform:{SHIFTDOWN}(:{SHIFTUP}addon-{SHIFTDOWN}(&è''{SHIFTUP}-latest{SHIFTDOWN};{SHIFTUP}e{BACKSPACE}xpi{ENTER}")
 Sleep(10000)
 Send("{ALTDOWN}a{ALTUP}")
 Sleep(10000)
 Send("{ALTDOWN}r{ALTUP}")
-_WinWaitActivate("Nightly Start Page - Nightly","")
+_WinWaitActivate("Nightly","")
 Send("{ALTDOWN}{F4}{ALTUP}")
 #endregion --- Au3Recorder generated code End ---
