@@ -36,7 +36,7 @@ If Not WinExists("Asking PIN") Then
 Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("eID Authenticatie Test - Nightly","", 120)
 If Not WinExists("eID Authenticatie Test - Nightly") Then
-   Exit(1)
+   Exit(2)
 EndIf
 Send("{ALTDOWN}{F4}{ALTUP}")
 #endregion --- Au3Recorder generated code End ---

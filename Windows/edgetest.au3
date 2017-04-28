@@ -35,7 +35,7 @@ EndIf
 Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("eID Authenticatie Test","",120)
 If Not WinExists("eID Authenticatie Test") Then
-   Exit(1)
+   Exit(2)
 EndIf
 Send("{ALTDOWN}{F4}{ALTUP}")
 #endregion --- Au3Recorder generated code End ---

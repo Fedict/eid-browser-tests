@@ -40,7 +40,7 @@ Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("eID Authenticatie Test - Google Chrome","", 120)
 If Not WinActive("eID Authenticatie Test - Google Chrome") Then
   --- test failed
-  Exit(1)
+  Exit(2)
 EndIf
 Send("{ALTDOWN}{F4}{ALTUP}")
 #endregion --- Au3Recorder generated code End ---
