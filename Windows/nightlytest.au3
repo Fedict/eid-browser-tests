@@ -33,6 +33,7 @@ Send("{ENTER}")
 _WinWaitActivate("Asking PIN","", 120)
 If Not WinExists("Asking PIN") Then
    Exit(1)
+EndIf
 Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("eID Authenticatie Test - Nightly","", 120)
 If Not WinExists("eID Authenticatie Test - Nightly") Then
