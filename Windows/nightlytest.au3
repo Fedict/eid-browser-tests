@@ -30,7 +30,9 @@ _WinWaitActivate("Nightly Start Page - Nightly","")
 Send("{CTRLDOWN}l{CTRLUP}https:{SHIFTDOWN}::{SHIFTUP}test{SHIFTDOWN};{SHIFTUP}eid{SHIFTDOWN};{SHIFTUP}belgium{SHIFTDOWN};{SHIFTUP}be{ENTER}")
 _WinWaitActivate("User Identification Request","")
 Send("{ENTER}")
-_WinWaitActivate("Asking PIN","")
+_WinWaitActivate("Asking PIN","", 120)
+If Not WinExists("Asking PIN") Then
+   Exit(1)
 Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("eID Authenticatie Test - Nightly","", 120)
 If Not WinExists("eID Authenticatie Test - Nightly") Then

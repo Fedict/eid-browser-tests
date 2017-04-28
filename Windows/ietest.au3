@@ -28,7 +28,10 @@ EndIf
 Run('"C:\Program Files\Internet Explorer\iexplore.exe" "https://test.eid.belgium.be/"')
 _WinWaitActivate("Windows-beveiliging","")
 Send("{ALTDOWN}o{ALTUP}")
-_WinWaitActivate("Windows-beveiliging","")
+_WinWaitActivate("Windows-beveiliging","", 120)
+If Not WinExists("Windows-beveiliging") Then
+   Exit(1)
+EndIf
 Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("eID Authenticatie Test","",120)
 If Not WinExists("eID Authenticatie Test") Then
