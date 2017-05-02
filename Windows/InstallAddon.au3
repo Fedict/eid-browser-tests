@@ -22,6 +22,9 @@ _AU3RecordSetup()
 #endregion --- Internal functions Au3Recorder End ---
 
 
+While Not FileExists('C:\Program Files\Nightly\firefox.exe')
+  Sleep(1000)
+WEnd
 Run('C:\Program Files\Nightly\firefox.exe')
 WinWait("Nightly Start Page")
 If (WinExists("Default Browser","")) Then
