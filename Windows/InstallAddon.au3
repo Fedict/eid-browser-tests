@@ -22,7 +22,7 @@ _AU3RecordSetup()
 #endregion --- Internal functions Au3Recorder End ---
 
 
-While Not FileExists('C:\Program Files\Nightly\firefox.exe')
+While WinExists('Downloads weergeven - Internet Explorer')
   Sleep(1000)
 WEnd
 Run('C:\Program Files\Nightly\firefox.exe')
