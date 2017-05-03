@@ -25,6 +25,7 @@ _AU3RecordSetup()
 While WinExists('Downloads weergeven - Internet Explorer')
   Sleep(1000)
 WEnd
+Sleep(1000)
 Run('C:\Program Files\Nightly\firefox.exe')
 WinWait("Nightly Start Page")
 If (WinExists("Default Browser","")) Then
