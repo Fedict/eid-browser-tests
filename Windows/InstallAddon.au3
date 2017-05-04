@@ -27,7 +27,7 @@ While WinExists('Downloads weergeven - Internet Explorer')
 WEnd
 Sleep(1000)
 Run('C:\Program Files\Nightly\firefox.exe')
-WinWait("Nightly Start Page")
+_WinWaitActivate("Nightly Start Page","")
 If (WinExists("Default Browser","")) Then
   WinActivate("Default Browser","")
   Send("{ESC}")

@@ -20,6 +20,7 @@ _WinWaitActivate("Nightly Setup","")
 Send("{SPACE}")
 _WinWaitActivate("Firefox Nightly First Run Page - Nightly","")
 Send("{ALTDOWN}{F4}{ALTUP}")
+Sleep(100)
 If (WinExists("Confirm close","")) Then
    WinActivate("Confirm close","")
    Send("{SPACE}")
