@@ -15,6 +15,7 @@ Func _WinWaitActivate($title, $text, $timeout=0)
 EndFunc
 Run('"C:\Program Files\Internet Explorer\iexplore.exe" "https://download.mozilla.org/?product=firefox-nightly-stub&os=win&lang=en-US"')
 _WinWaitActivate("Downloads weergeven - Internet Explorer","")
+Sleep(100)
 Send("{RIGHT}{SPACE}")
 _WinWaitActivate("Nightly Setup","")
 Send("{SPACE}")
