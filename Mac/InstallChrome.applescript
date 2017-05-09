@@ -13,7 +13,9 @@ on run
 	delay 15
 	do shell script "hdiutil mount ~/Downloads/googlechrome.dmg"
 	set canaryapp to "Google Chrome Canary:Google Chrome Canary.app"
-	tell application "Finder" to duplicate alias canaryapp to alias "Macintosh HD:Applications" with replacing
-	do shell script "hdiutil eject disk1"
+	tell application "Finder"
+		duplicate alias canaryapp to alias "Macintosh HD:Applications" with replacing
+		eject "Google Chrome Canary"
+	end tell
 	do shell script "rm ~/Downloads/googlechrome.dmg"
 end run
