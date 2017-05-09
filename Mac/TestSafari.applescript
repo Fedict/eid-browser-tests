@@ -9,6 +9,6 @@ on run (pincode)
 		delay 0.5
 		click text field 1 of window 1 of application process "SecurityAgent"
 		keystroke pincode
-		key code 36
+		key code 36 (* enter *)
 	end tell
 end run
