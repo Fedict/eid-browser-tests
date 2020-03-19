@@ -7,7 +7,7 @@ Opt('WinDetectHiddenText',1)
 Opt('MouseCoordMode',0)
 Local $aResult = DllCall('User32.dll', 'int', 'GetKeyboardLayoutNameW', 'wstr', '')
 If $aResult[1] <> '00000813' Then
-	MsgBox(64, 'Warning', 'Recording has been done under a different Keyboard layout' & @CRLF & '(00000813->' & $aResult[1] & ')')
+  MsgBox(64, 'Warning', 'Recording has been done under a different Keyboard layout' & @CRLF & '(00000813->' & $aResult[1] & ')')
 EndIf
 
 EndFunc
@@ -22,25 +22,16 @@ _AU3RecordSetup()
 #endregion --- Internal functions Au3Recorder End ---
 
 If $CmdLine[0] <> 1 Then
-	MsgBox(64, 'Error', 'Need a PIN code on the command line!')
-	Exit(1)
+   MsgBox(64, "Error", "Need a PIN code on the command line!")
+   Exit(1)
 EndIf
-
-Run('"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"')
-_WinWaitActivate("New Tab - Google Chrome","")
-;Run('"' & EnvGet("LOCALAPPDATA") & '\Google\Chrome SxS\Application\chrome.exe"')
-;_WinWaitActivate("Nieuw tabblad - Google Chrome","")
-Send("https://latin.grep.be/eidtest/ {ENTER}")
-Sleep(3000)
-If WinActive('Window Security') Then
-	Send($CmdLine[1] & "{ENTER}")
-EndIf
-Sleep(3000)
+Run('"C:\Program Files\Mozilla Firefox\firefox.exe" "https://latin.grep.be/eidtest/"')
+Sleep(1000)
+_WinWaitActivate("User Identification Request","")
 Send("{ENTER}")
-Sleep(3000)
-_WinWaitActivate("Windows Security","", 120)
-If Not WinActive("Windows Security") Then
-  Exit(1)
+_WinWaitActivate("Asking PIN","", 120)
+If Not WinExists("Asking PIN") Then
+   Exit(1)
 EndIf
 Send($CmdLine[1] & "{ENTER}")
 _WinWaitActivate("PHP 7.3.14","",120)

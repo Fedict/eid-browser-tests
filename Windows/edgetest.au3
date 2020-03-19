@@ -25,17 +25,19 @@ If $CmdLine[0] <> 1 Then
    MsgBox(64, "Error", "Need a PIN code on the command line!")
    Exit(1)
 EndIf
-Run('cmd.exe /c "start microsoft-edge:https://test.eid.belgium.be/"')
-_WinWaitActivate("Windows-beveiliging","")
+Run('cmd.exe /c "start microsoft-edge:https://latin.grep.be/eidtest/"')
+_WinWaitActivate("Windows Security","")
 Send("{ALTDOWN}o{ALTUP}")
-_WinWaitActivate("Windows-beveiliging","", 120)
-If Not WinExists("Windows-beveiliging") Then
+_WinWaitActivate("Windows Security","", 120)
+If Not WinExists("Windows Security") Then
    Exit(1)
 EndIf
 Send($CmdLine[1] & "{ENTER}")
-_WinWaitActivate("eID Authenticatie Test","",120)
-If Not WinExists("eID Authenticatie Test") Then
+_WinWaitActivate("PHP 7.3.14","",120)
+If Not WinExists("PHP 7.3.14") Then
    Exit(2)
 EndIf
+Sleep(10000)
 Send("{ALTDOWN}{F4}{ALTUP}")
+Exit(0)
 #endregion --- Au3Recorder generated code End ---
