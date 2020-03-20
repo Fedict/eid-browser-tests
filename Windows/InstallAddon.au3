@@ -22,22 +22,22 @@ _AU3RecordSetup()
 #endregion --- Internal functions Au3Recorder End ---
 
 
-While WinExists('Downloads weergeven - Internet Explorer')
+While WinExists('View Downloads - Internet Explorer')
   Sleep(1000)
 WEnd
 Sleep(1000)
-Run('C:\Program Files\Nightly\firefox.exe')
-_WinWaitActivate("Nightly Start Page","")
+Run('C:\Program Files\Firefox Nightly\firefox.exe')
+_WinWaitActivate("New Tab","")
 If (WinExists("Default Browser","")) Then
   WinActivate("Default Browser","")
   Send("{ESC}")
 EndIf
-_WinWaitActivate("Nightly Start Page","")
-Send("{CTRLDOWN}l{CTRLUP}https:{SHIFTDOWN}::{SHIFTUP}addons{SHIFTDOWN};{SHIFTUP}mozilla{SHIFTDOWN};{SHIFTUP}org{SHIFTDOWN}:{SHIFTUP}firefox{SHIFTDOWN}:{SHIFTUP}downloads{SHIFTDOWN}:{SHIFTUP}latest{SHIFTDOWN}:{SHIFTUP}belgium-eid{SHIFTDOWN}:{SHIFTUP}platform:{SHIFTDOWN}(:{SHIFTUP}addon-{SHIFTDOWN}(&è''{SHIFTUP}-latest{SHIFTDOWN};{SHIFTUP}e{BACKSPACE}xpi{ENTER}")
+_WinWaitActivate("New Tab","")
+Send("https://addons.mozilla.org/firefox/downloads/latest/belgium-eid/platform:5/addon-51244-latest.e/xpi {ENTER}")
 Sleep(10000)
 Send("{ALTDOWN}a{ALTUP}")
 Sleep(10000)
 Send("{ALTDOWN}r{ALTUP}")
-_WinWaitActivate("Nightly","")
+_WinWaitActivate("New Tab","")
 Send("{ALTDOWN}{F4}{ALTUP}")
 #endregion --- Au3Recorder generated code End ---

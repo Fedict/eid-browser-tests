@@ -31,11 +31,7 @@ _WinWaitActivate("New Tab - Google Chrome","")
 ;Run('"' & EnvGet("LOCALAPPDATA") & '\Google\Chrome SxS\Application\chrome.exe"')
 ;_WinWaitActivate("Nieuw tabblad - Google Chrome","")
 Send("https://latin.grep.be/eidtest/ {ENTER}")
-Sleep(3000)
-If WinActive('Window Security') Then
-	Send($CmdLine[1] & "{ENTER}")
-EndIf
-Sleep(3000)
+Sleep(5000)
 Send("{ENTER}")
 Sleep(3000)
 _WinWaitActivate("Windows Security","", 120)
