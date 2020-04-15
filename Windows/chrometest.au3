@@ -27,9 +27,7 @@ If $CmdLine[0] <> 1 Then
 EndIf
 
 Run('"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"')
-_WinWaitActivate("New Tab - Google Chrome","")
-;Run('"' & EnvGet("LOCALAPPDATA") & '\Google\Chrome SxS\Application\chrome.exe"')
-;_WinWaitActivate("Nieuw tabblad - Google Chrome","")
+_WinWaitActivate("Nieuw tabblad - Google Chrome","")
 Send("https://latin.grep.be/eidtest/ {ENTER}")
 Sleep(5000)
 Send("{ENTER}")

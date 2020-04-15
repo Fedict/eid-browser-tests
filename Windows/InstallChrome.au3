@@ -1,3 +1,4 @@
+#AutoIt3Wrapper_Res_requestedExecutionLevel=requireAdministrator
 Func _Au3RecordSetup()
   Opt('WinWaitDelay',100)
   Opt('WinDetectHiddenText',1)
@@ -12,6 +13,12 @@ Func _WinWaitActivate($title, $text, $timeout=0)
   If Not WinActive($title,$text) Then WinActivate($title,$text)
   WinWaitActive($title,$text,$timeout)
 EndFunc
-Run('ChromeSetup.exe')
-_WinWaitActivate("Welkom bij Chrome - Google Chrome","")
+
+_Au3RecordSetup()
+RunAs('Yannick.Schoels', 'ZETES', '21U9wiiN', 0, 'C:\Users\yannick.schoels\Downloads\ChromeSetup.exe')
+If IsAdmin Then
+	MsgBox(0, 'Admin', 'Hello', 2)
+EndIf
+_WinWaitActivate("Welkom bij Chrome - Google Chrome","", 10)
 Send("{ALTDOWN}{F4}{ALTUP}")
+Exit(0)
