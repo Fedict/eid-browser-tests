@@ -2,11 +2,13 @@
 <scriptfile>
     <settings program="actiona" version="3.10.0" scriptVersion="1.1.0" os="GNU/Linux"/>
     <actions>
-        <action name="ActionKey" version="1.0.0"/>
-        <action name="ActionDetachedCommand" version="1.0.0"/>
+        <action name="ActionConsole" version="1.0.0"/>
         <action name="ActionPause" version="1.0.0"/>
-        <action name="ActionWindowCondition" version="1.0.0"/>
         <action name="ActionWindow" version="1.0.0"/>
+        <action name="ActionDetachedCommand" version="1.0.0"/>
+        <action name="ActionWindowCondition" version="1.0.0"/>
+        <action name="ActionKey" version="1.0.0"/>
+        <action name="ActionGoto" version="1.0.0"/>
     </actions>
     <parameters/>
     <resources/>
@@ -38,6 +40,17 @@
             </parameter>
             <parameter name="unit">
                 <subParameter name="value" code="0">seconds</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionConsole">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="output">
+                <subParameter name="value" code="0">information</subParameter>
+            </parameter>
+            <parameter name="text">
+                <subParameter name="value" code="0">entering ceritificate approval</subParameter>
             </parameter>
         </action>
         <action name="ActionKey">
@@ -84,6 +97,17 @@
             </parameter>
             <parameter name="unit">
                 <subParameter name="value" code="0">seconds</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionConsole">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="output">
+                <subParameter name="value" code="0">information</subParameter>
+            </parameter>
+            <parameter name="text">
+                <subParameter name="value" code="0">entering pin</subParameter>
             </parameter>
         </action>
         <action name="ActionKey">
@@ -226,6 +250,17 @@
                 <subParameter name="value" code="0">Win32</subParameter>
             </parameter>
         </action>
+        <action name="ActionPause">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="duration">
+                <subParameter name="value" code="0">5</subParameter>
+            </parameter>
+            <parameter name="unit">
+                <subParameter name="value" code="0">seconds</subParameter>
+            </parameter>
+        </action>
         <action name="ActionWindowCondition">
             <exception id="0" action="0" line=""/>
             <exception id="1" action="0" line=""/>
@@ -237,12 +272,12 @@
                 <subParameter name="value" code="0"></subParameter>
             </parameter>
             <parameter name="ifFalse">
-                <subParameter name="action" code="0">wait</subParameter>
-                <subParameter name="line" code="0"></subParameter>
+                <subParameter name="action" code="0">goto</subParameter>
+                <subParameter name="line" code="0">013</subParameter>
             </parameter>
             <parameter name="ifTrue">
-                <subParameter name="action" code="0">do_nothing</subParameter>
-                <subParameter name="line" code="0"></subParameter>
+                <subParameter name="action" code="0">goto</subParameter>
+                <subParameter name="line" code="0">015</subParameter>
             </parameter>
             <parameter name="position">
                 <subParameter name="value" code="0"></subParameter>
@@ -264,6 +299,25 @@
             </parameter>
             <parameter name="yCoordinate">
                 <subParameter name="value" code="0"></subParameter>
+            </parameter>
+        </action>
+        <action name="ActionConsole">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="output">
+                <subParameter name="value" code="0">error</subParameter>
+            </parameter>
+            <parameter name="text">
+                <subParameter name="value" code="0">error window</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionGoto">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="line">
+                <subParameter name="value" code="0">017</subParameter>
             </parameter>
         </action>
         <action name="ActionPause">
@@ -301,6 +355,17 @@
             </parameter>
             <parameter name="useBorders">
                 <subParameter name="value" code="0">true</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionConsole">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="output">
+                <subParameter name="value" code="0">information</subParameter>
+            </parameter>
+            <parameter name="text">
+                <subParameter name="value" code="0">exiting browser</subParameter>
             </parameter>
         </action>
         <action name="ActionKey">
