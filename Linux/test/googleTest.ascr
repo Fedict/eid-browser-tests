@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scriptfile>
-    <settings program="actiona" version="3.10.0" scriptVersion="1.1.0" os="GNU/Linux"/>
+    <settings program="actiona" version="3.10.1" scriptVersion="1.1.0" os="GNU/Linux"/>
     <actions>
-        <action name="ActionConsole" version="1.0.0"/>
-        <action name="ActionPause" version="1.0.0"/>
         <action name="ActionWindow" version="1.0.0"/>
         <action name="ActionDetachedCommand" version="1.0.0"/>
+        <action name="ActionPause" version="1.0.0"/>
         <action name="ActionWindowCondition" version="1.0.0"/>
         <action name="ActionKey" version="1.0.0"/>
         <action name="ActionGoto" version="1.0.0"/>
+        <action name="ActionCode" version="1.0.0"/>
+        <action name="ActionWriteText" version="1.0.0"/>
     </actions>
     <parameters/>
     <resources/>
@@ -42,15 +43,19 @@
                 <subParameter name="value" code="0">seconds</subParameter>
             </parameter>
         </action>
-        <action name="ActionConsole">
+        <action name="ActionCode">
             <exception id="0" action="0" line=""/>
             <exception id="1" action="0" line=""/>
             <exception id="2" action="1" line=""/>
-            <parameter name="output">
-                <subParameter name="value" code="0">information</subParameter>
-            </parameter>
-            <parameter name="text">
-                <subParameter name="value" code="0">entering ceritificate approval</subParameter>
+            <parameter name="code">
+                <subParameter name="value" code="1">var logfile = new File();
+var logpath = &quot;/home/osboxes/Desktop/test/logfile.log&quot;;
+logfile.open(logpath,File.WriteOnly |  File.Text  | File.Append);
+
+now = new Date();
+logfile.writeText(now);
+logfile.writeText(&quot;: googletest entering certificate confirmation&quot;);
+logfile.close();</subParameter>
             </parameter>
         </action>
         <action name="ActionKey">
@@ -99,120 +104,35 @@
                 <subParameter name="value" code="0">seconds</subParameter>
             </parameter>
         </action>
-        <action name="ActionConsole">
+        <action name="ActionCode">
             <exception id="0" action="0" line=""/>
             <exception id="1" action="0" line=""/>
             <exception id="2" action="1" line=""/>
-            <parameter name="output">
-                <subParameter name="value" code="0">information</subParameter>
+            <parameter name="code">
+                <subParameter name="value" code="1">var logfile = new File();
+var logpath = &quot;/home/osboxes/Desktop/test/logfile.log&quot;;
+logfile.open(logpath,File.WriteOnly |  File.Text  | File.Append);
+
+now = new Date();
+logfile.writeText(&quot;\n&quot;);
+logfile.writeText(now);
+logfile.writeText(&quot;: googletest entering pin&quot;);
+logfile.close();</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionWriteText">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <exception id="32" action="0" line=""/>
+            <parameter name="noUnicodeCharacters">
+                <subParameter name="value" code="0">false</subParameter>
+            </parameter>
+            <parameter name="pause">
+                <subParameter name="value" code="0">0</subParameter>
             </parameter>
             <parameter name="text">
-                <subParameter name="value" code="0">entering pin</subParameter>
-            </parameter>
-        </action>
-        <action name="ActionKey">
-            <exception id="0" action="0" line=""/>
-            <exception id="1" action="0" line=""/>
-            <exception id="2" action="1" line=""/>
-            <exception id="32" action="0" line=""/>
-            <exception id="33" action="0" line=""/>
-            <parameter name="action">
-                <subParameter name="value" code="0">pressRelease</subParameter>
-            </parameter>
-            <parameter name="alt">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="amount">
-                <subParameter name="value" code="0">2</subParameter>
-            </parameter>
-            <parameter name="ctrl">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="key">
-                <subParameter name="isQtKey" code="0">false</subParameter>
-                <subParameter name="key" code="0">numpad0</subParameter>
-            </parameter>
-            <parameter name="meta">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="pause">
-                <subParameter name="value" code="0">10</subParameter>
-            </parameter>
-            <parameter name="shift">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="type">
-                <subParameter name="value" code="0">Win32</subParameter>
-            </parameter>
-        </action>
-        <action name="ActionKey">
-            <exception id="0" action="0" line=""/>
-            <exception id="1" action="0" line=""/>
-            <exception id="2" action="1" line=""/>
-            <exception id="32" action="0" line=""/>
-            <exception id="33" action="0" line=""/>
-            <parameter name="action">
-                <subParameter name="value" code="0">pressRelease</subParameter>
-            </parameter>
-            <parameter name="alt">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="amount">
-                <subParameter name="value" code="0">1</subParameter>
-            </parameter>
-            <parameter name="ctrl">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="key">
-                <subParameter name="isQtKey" code="0">false</subParameter>
-                <subParameter name="key" code="0">numpad7</subParameter>
-            </parameter>
-            <parameter name="meta">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="pause">
-                <subParameter name="value" code="0">10</subParameter>
-            </parameter>
-            <parameter name="shift">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="type">
-                <subParameter name="value" code="0">Win32</subParameter>
-            </parameter>
-        </action>
-        <action name="ActionKey">
-            <exception id="0" action="0" line=""/>
-            <exception id="1" action="0" line=""/>
-            <exception id="2" action="1" line=""/>
-            <exception id="32" action="0" line=""/>
-            <exception id="33" action="0" line=""/>
-            <parameter name="action">
-                <subParameter name="value" code="0">pressRelease</subParameter>
-            </parameter>
-            <parameter name="alt">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="amount">
-                <subParameter name="value" code="0">1</subParameter>
-            </parameter>
-            <parameter name="ctrl">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="key">
-                <subParameter name="isQtKey" code="0">false</subParameter>
-                <subParameter name="key" code="0">numpad5</subParameter>
-            </parameter>
-            <parameter name="meta">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="pause">
-                <subParameter name="value" code="0">10</subParameter>
-            </parameter>
-            <parameter name="shift">
-                <subParameter name="value" code="0">false</subParameter>
-            </parameter>
-            <parameter name="type">
-                <subParameter name="value" code="0">Win32</subParameter>
+                <subParameter name="value" code="0">0075</subParameter>
             </parameter>
         </action>
         <action name="ActionKey">
@@ -261,10 +181,10 @@
                 <subParameter name="value" code="0">seconds</subParameter>
             </parameter>
         </action>
-        <action name="ActionWindowCondition">
+        <action name="ActionWindowCondition" timeout="60000">
             <exception id="0" action="0" line=""/>
             <exception id="1" action="0" line=""/>
-            <exception id="2" action="1" line=""/>
+            <exception id="2" action="0" line=""/>
             <parameter name="condition">
                 <subParameter name="value" code="0">exists</subParameter>
             </parameter>
@@ -273,10 +193,10 @@
             </parameter>
             <parameter name="ifFalse">
                 <subParameter name="action" code="0">goto</subParameter>
-                <subParameter name="line" code="0">013</subParameter>
+                <subParameter name="line" code="0">014</subParameter>
             </parameter>
             <parameter name="ifTrue">
-                <subParameter name="action" code="0">goto</subParameter>
+                <subParameter name="action" code="0">do_nothing</subParameter>
                 <subParameter name="line" code="0">015</subParameter>
             </parameter>
             <parameter name="position">
@@ -301,34 +221,20 @@
                 <subParameter name="value" code="0"></subParameter>
             </parameter>
         </action>
-        <action name="ActionConsole">
+        <action name="ActionCode">
             <exception id="0" action="0" line=""/>
             <exception id="1" action="0" line=""/>
             <exception id="2" action="1" line=""/>
-            <parameter name="output">
-                <subParameter name="value" code="0">error</subParameter>
-            </parameter>
-            <parameter name="text">
-                <subParameter name="value" code="0">error window</subParameter>
-            </parameter>
-        </action>
-        <action name="ActionGoto">
-            <exception id="0" action="0" line=""/>
-            <exception id="1" action="0" line=""/>
-            <exception id="2" action="1" line=""/>
-            <parameter name="line">
-                <subParameter name="value" code="0">017</subParameter>
-            </parameter>
-        </action>
-        <action name="ActionPause">
-            <exception id="0" action="0" line=""/>
-            <exception id="1" action="0" line=""/>
-            <exception id="2" action="1" line=""/>
-            <parameter name="duration">
-                <subParameter name="value" code="0">5</subParameter>
-            </parameter>
-            <parameter name="unit">
-                <subParameter name="value" code="0">seconds</subParameter>
+            <parameter name="code">
+                <subParameter name="value" code="1">var logfile = new File();
+var logpath = &quot;/home/osboxes/Desktop/test/logfile.log&quot;;
+logfile.open(logpath,File.WriteOnly |  File.Text  | File.Append);
+
+now = new Date();
+logfile.writeText(&quot;\n&quot;);
+logfile.writeText(now);
+logfile.writeText(&quot;: succes&quot;);
+logfile.close();</subParameter>
             </parameter>
         </action>
         <action name="ActionWindow">
@@ -351,21 +257,72 @@
                 <subParameter name="value" code="0">0</subParameter>
             </parameter>
             <parameter name="title">
-                <subParameter name="value" code="0">PHP 7.3.14-1~deb10u1 - phpinfo() - Google Chrome</subParameter>
+                <subParameter name="value" code="0">PHP 7.3.19-1~deb10u1 - phpinfo() - Google Chrome</subParameter>
             </parameter>
             <parameter name="useBorders">
                 <subParameter name="value" code="0">true</subParameter>
             </parameter>
         </action>
-        <action name="ActionConsole">
+        <action name="ActionGoto">
             <exception id="0" action="0" line=""/>
             <exception id="1" action="0" line=""/>
             <exception id="2" action="1" line=""/>
-            <parameter name="output">
-                <subParameter name="value" code="0">information</subParameter>
+            <parameter name="line">
+                <subParameter name="value" code="0">018</subParameter>
             </parameter>
-            <parameter name="text">
-                <subParameter name="value" code="0">exiting browser</subParameter>
+        </action>
+        <action name="ActionCode">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="code">
+                <subParameter name="value" code="1">var logfile = new File();
+var logpath = &quot;/home/osboxes/Desktop/test/logfile.log&quot;;
+logfile.open(logpath,File.WriteOnly |  File.Text  | File.Append);
+
+now = new Date();
+logfile.writeText(&quot;\n&quot;);
+logfile.writeText(now);
+logfile.writeText(&quot;: failed&quot;);
+logfile.close();</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionPause">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="duration">
+                <subParameter name="value" code="0">5</subParameter>
+            </parameter>
+            <parameter name="unit">
+                <subParameter name="value" code="0">seconds</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionCode">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="code">
+                <subParameter name="value" code="1">var logfile = new File();
+var logpath = &quot;/home/osboxes/Desktop/test/logfile.log&quot;;
+logfile.open(logpath,File.WriteOnly |  File.Text  | File.Append);
+
+now = new Date();
+logfile.writeText(&quot;\n&quot;);
+logfile.writeText(now);
+logfile.writeText(&quot;: exiting browser&quot;);
+logfile.close();</subParameter>
+            </parameter>
+        </action>
+        <action name="ActionPause">
+            <exception id="0" action="0" line=""/>
+            <exception id="1" action="0" line=""/>
+            <exception id="2" action="1" line=""/>
+            <parameter name="duration">
+                <subParameter name="value" code="0">30</subParameter>
+            </parameter>
+            <parameter name="unit">
+                <subParameter name="value" code="0">seconds</subParameter>
             </parameter>
         </action>
         <action name="ActionKey">
